@@ -80,20 +80,33 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent intent;
 
-        if (id == R.id.park_list) {
-            Intent intent = new Intent(getApplicationContext(), park_list.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        switch(id) {
+            case R.id.park_list:
+                intent = new Intent(getApplicationContext(), ParkListActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_gallery:
+                intent = new Intent(getApplicationContext(), ParkListActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_slideshow:
+                intent = new Intent(getApplicationContext(), ParkListActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_manage:
+                intent = new Intent(getApplicationContext(), ParkListActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_share:
+                intent = new Intent(getApplicationContext(), ParkListActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_send:
+                intent = new Intent(getApplicationContext(), ParkListActivity.class);
+                startActivity(intent);
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
