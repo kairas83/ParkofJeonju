@@ -1,4 +1,4 @@
-package org.iptime.kairas.park_of_jeonju_city;
+package org.iptime.kairas.parkofjeonju;
 
 import org.junit.Test;
 

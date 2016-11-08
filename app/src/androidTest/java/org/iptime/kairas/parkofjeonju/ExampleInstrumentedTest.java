@@ -1,4 +1,4 @@
-package org.iptime.kairas.park_of_jeonju_city;
+package org.iptime.kairas.parkofjeonju;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("org.iptime.kairas.park_of_jeonju_city", appContext.getPackageName());
+        assertEquals("org.iptime.kairas.parkofjeonju", appContext.getPackageName());
     }
 }

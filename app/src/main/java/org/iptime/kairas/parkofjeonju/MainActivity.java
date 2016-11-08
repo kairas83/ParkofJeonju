@@ -1,4 +1,4 @@
-package org.iptime.kairas.park_of_jeonju_city;
+package org.iptime.kairas.parkofjeonju;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
