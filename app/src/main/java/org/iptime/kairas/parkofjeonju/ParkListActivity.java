@@ -15,7 +15,17 @@ public class ParkListActivity extends AppCompatActivity {
 
         arItem = new ArrayList<MyItem>();
         MyItem mi;
-        mi = new MyItem(R.drawable.chamseam_park, "참새암공원");
+        mi = new MyItem(R.drawable.chamseam_park, "참새암 공원");
+        arItem.add(mi);
+        mi = new MyItem(R.drawable.daga_park, "다가 공원");
+        arItem.add(mi);
+        mi = new MyItem(R.drawable.dukjin_park, "덕진 공원");
+        arItem.add(mi);
+        mi = new MyItem(R.drawable.ecocity, "에코 시티");
+        arItem.add(mi);
+        mi = new MyItem(R.drawable.garyunsan_park, "가련산 공원");
+        arItem.add(mi);
+        mi = new MyItem(R.drawable.gijize, "진지제 공원");
         arItem.add(mi);
 
         MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.list_contentl, arItem);
