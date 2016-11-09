@@ -28,7 +28,7 @@ public class ParkListActivity extends AppCompatActivity {
         mi = new MyItem(R.drawable.gijize, "진지제 공원");
         arItem.add(mi);
 
-        MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.list_contentl, arItem);
+        MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.list_content, arItem);
 
         ListView myList = (ListView) findViewById(R.id.list);
         myList.setAdapter(myListAdapter);
