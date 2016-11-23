@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,6 +56,11 @@ public class MyListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 String str = arSrc.get(pos).name + "공원을 호출합니다.";
                 Toast.makeText(maincon, str, Toast.LENGTH_SHORT).show();
+
+
+
+
+
             }
         });
         return convertView;
