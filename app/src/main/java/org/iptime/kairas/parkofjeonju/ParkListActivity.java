@@ -59,11 +59,3 @@ public class ParkListActivity extends AppCompatActivity {
 
 }
 
-class MyItem {
-    MyItem(int aimage, String aName) {
-        image = aimage;
-        name = aName;
-    }
-    int image;
-    String name;
-}
