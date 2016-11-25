@@ -22,6 +22,19 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
+        URLConnector task = new URLConnector(test);
+
+        task.start();
+
+        try {
+            task.join();
+            System.out.println("waiting... for result");
+        } catch (InterruptedException e) {
+
+        }
+        String result = task.getResult();
+        System.out.println(result);
 
         //TODO font
 
