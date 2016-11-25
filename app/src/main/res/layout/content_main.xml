@@ -9,13 +9,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="org.iptime.kairas.parkofjeonju.MainActivity"
+    tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main"
-    android:id="@+id/R_layout"
-    android:background="#ddddf2"
-    >
-
-
+    android:id="@+id/content_main"
+    android:background="#ddddf2">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,10 +20,7 @@
             android:src="@drawable/main_top"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:adjustViewBounds="true"
-
-            />
-
+            android:adjustViewBounds="true"/>
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -37,9 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="21dp">
 
-
         <TableRow>
-
             <ImageButton
                 android:id="@+id/allList"
                 android:layout_width="wrap_content"
@@ -50,9 +42,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/alllist"
                 android:background="@android:color/transparent"
-                android:layout_margin="20dp"
-
-                />
+                android:layout_margin="20dp"/>
 
             <ImageButton
                 android:id="@+id/nearest"
@@ -66,12 +56,9 @@
                 android:src="@drawable/nearest"
                 android:background="@android:color/transparent"
                 android:layout_margin="20dp"/>
-
-
         </TableRow>
 
         <TableRow>
-
             <ImageButton
                 android:id="@+id/part"
                 android:layout_width="wrap_content"
@@ -94,10 +81,7 @@
                 android:src="@drawable/divide"
                 android:id="@+id/divide"
                 android:background="@android:color/transparent"
-                android:layout_margin="20dp"
-                />
-
-
+                android:layout_margin="20dp"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>
