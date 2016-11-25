@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         //TODO font
 
@@ -80,13 +80,12 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void allList() {
+    public void allList(View view) {
         Intent intent;
         intent = new Intent(getApplicationContext(), ParkListActivity.class);
         startActivity(intent);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
