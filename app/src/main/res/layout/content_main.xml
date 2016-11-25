@@ -12,7 +12,7 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:id="@+id/content_main"
-    android:background="@drawable/park_home">
+    android:background="@drawable/main_background">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
                 android:layout_weight="1"
-                android:src="@drawable/alllist"
+                android:src="@drawable/ic_btn_all"
                 android:background="@android:color/transparent"
                 android:layout_margin="20dp"
                 android:onClick="allList"/>
@@ -55,7 +55,7 @@
                 android:scaleType="fitXY"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:src="@drawable/nearest"
+                android:src="@drawable/ic_btn_nearest"
                 android:background="@android:color/transparent"
                 android:layout_margin="20dp"/>
         </TableRow>
@@ -69,7 +69,7 @@
                 android:scaleType="fitXY"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:src="@drawable/part"
+                android:src="@drawable/ic_btn_precinct"
                 android:background="@android:color/transparent"
                 android:layout_margin="20dp"/>
 
@@ -80,7 +80,7 @@
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
                 android:layout_weight="1"
-                android:src="@drawable/divide"
+                android:src="@drawable/ic_btn_category"
                 android:id="@+id/divide"
                 android:background="@android:color/transparent"
                 android:layout_margin="20dp"/>
