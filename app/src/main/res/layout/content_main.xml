@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -11,10 +10,94 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="org.iptime.kairas.parkofjeonju.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:id="@+id/R_layout"
+    android:background="#ddddf2"
+    >
 
-    <TextView
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_top"
+            android:src="@drawable/main_top"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+
+            />
+
+
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp">
+
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/allList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0sp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                android:src="@drawable/alllist"
+                android:background="@android:color/transparent"
+                android:layout_margin="20dp"
+
+                />
+
+            <ImageButton
+                android:id="@+id/nearest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="0sp"
+                android:scaleType="fitXY"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/nearest"
+                android:background="@android:color/transparent"
+                android:layout_margin="20dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/part"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0sp"
+                android:scaleType="fitXY"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/part"
+                android:background="@android:color/transparent"
+                android:layout_margin="20dp"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0sp"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:layout_weight="1"
+                android:src="@drawable/divide"
+                android:id="@+id/divide"
+                android:background="@android:color/transparent"
+                android:layout_margin="20dp"
+                />
+
+
+        </TableRow>
+    </TableLayout>
 </RelativeLayout>

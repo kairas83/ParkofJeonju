@@ -57,10 +57,6 @@ public class MyListAdapter extends BaseAdapter {
                 String str = arSrc.get(pos).name + "공원을 호출합니다.";
                 Toast.makeText(maincon, str, Toast.LENGTH_SHORT).show();
 
-
-
-
-
             }
         });
         return convertView;
