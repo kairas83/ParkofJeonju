@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TODO font
-
         setTitle("전주 공원");
 
         Toolbar toolbar = (Toolbar) findViewById(kr.co.ipdisk.home35.ParkofJeonJu.R.id.toolbar);
@@ -123,13 +121,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
-    //TODO font
-
-
-
-
-
 }

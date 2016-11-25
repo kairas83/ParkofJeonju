@@ -1,18 +1,11 @@
 <resources>
-    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
-        <item name="android:typeface">sans</item>
-    </style>
-
-    <style name="AppTheme.DialogWhenLarge" parent="@android:style/Theme.Holo.Light.DialogWhenLarge">
-        <item name="android:typeface">sans</item>
-    </style>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">sans</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -24,4 +17,5 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar"/>
 </resources>
