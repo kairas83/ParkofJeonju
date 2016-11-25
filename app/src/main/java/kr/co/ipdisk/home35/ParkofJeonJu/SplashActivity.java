@@ -20,7 +20,7 @@ public class SplashActivity extends Activity{
         }catch(InterruptedException e){
             e.printStackTrace();
         }
-
+        //TODO splash.jpg 이미지 제대로 표시되게 하기
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }

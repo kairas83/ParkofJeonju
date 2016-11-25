@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setTitle("전주 공원");
+        setTitle("전주공원");
 
         Toolbar toolbar = (Toolbar) findViewById(kr.co.ipdisk.home35.ParkofJeonJu.R.id.toolbar);
         setSupportActionBar(toolbar);
