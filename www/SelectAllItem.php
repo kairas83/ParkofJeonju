@@ -12,7 +12,7 @@
 	session_start();
 	
 	// 쿼리문 생성
-	$sql = "select * from `공원정보`";
+	$sql = "select * from 공원정보";
  
 	// 쿼리 실행 결과를 $result에 저장
 	$result = mysql_query($sql, $connect);
