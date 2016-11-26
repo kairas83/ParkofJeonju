@@ -15,7 +15,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Handler hd = new Handler();
-        hd.postDelayed(new SplashHandler() , 3000); // 3초 후에 hd Handler 실행
+        hd.postDelayed(new SplashHandler() , 1000); // 3초 후에 hd Handler 실행
     }
 
     private class SplashHandler implements Runnable{
@@ -26,15 +26,5 @@ public class SplashActivity extends Activity {
     }
 
 }
-/*
-        try{
-            Thread.sleep(3000);
-        }catch(InterruptedException e){
-            e.printStackTrace();
-        }
-        //TODO loading.png 이미지 제대로 표시되게 하기
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
-    }
-*/
+
 
