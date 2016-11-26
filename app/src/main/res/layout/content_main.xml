@@ -12,16 +12,9 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:id="@+id/content_main"
-    android:background="@drawable/main_background">
+    android:background="@drawable/main_">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_top"
-        android:src="@drawable/main_top"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"/>
+
 
     <TableLayout
         android:layout_width="wrap_content"
