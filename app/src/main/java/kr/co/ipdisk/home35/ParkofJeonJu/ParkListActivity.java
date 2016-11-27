@@ -3,6 +3,7 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
 import java.util.ArrayList;
 
 public class ParkListActivity extends AppCompatActivity {
@@ -13,9 +14,10 @@ public class ParkListActivity extends AppCompatActivity {
         setTitle("공원 목록");
 
         String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
-        URLConnector task = new URLConnector(test);
+        phpDown task = new phpDown(test);
 
         task.start();
+        String result;
 
         try {
             task.join();
@@ -23,11 +25,17 @@ public class ParkListActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
 
         } finally {
-            String result = task.getResult();
+            result = task.getResult();
             System.out.println(result); //TODO println대신 ParkListActivity에 출력 연결
         }
 
 
+
+
+
+
+
+/*
         arItem = new ArrayList<MyItem>();
         MyItem mi;
         mi = new MyItem(kr.co.ipdisk.home35.ParkofJeonJu.R.drawable.parkimg_chamseam, "참새암 공원");
@@ -64,12 +72,13 @@ public class ParkListActivity extends AppCompatActivity {
         arItem.add(mi);
         mi = new MyItem(kr.co.ipdisk.home35.ParkofJeonJu.R.drawable.parkimg_wolpyeong, "월평 공원");
         arItem.add(mi);
+*/
 
+        MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.list_content, arItem);
 
-        MyListAdapter myListAdapter = new MyListAdapter(this, kr.co.ipdisk.home35.ParkofJeonJu.R.layout.list_content, arItem);
-
-        ListView myList = (ListView) findViewById(kr.co.ipdisk.home35.ParkofJeonJu.R.id.list);
+        ListView myList = (ListView) findViewById(R.id.list);
         myList.setAdapter(myListAdapter);
+
     }
 
 
