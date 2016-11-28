@@ -4,10 +4,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class ParkListActivity extends AppCompatActivity {
     ArrayList<MyItem> arItem;
+    MyItem mi;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_parklist);
@@ -26,18 +32,33 @@ public class ParkListActivity extends AppCompatActivity {
 
         } finally {
             result = task.getResult();
-            System.out.println(result); //TODO println대신 ParkListActivity에 출력 연결
         }
 
 
 
+        String eng_name = "parkimg_chamseam";
+        String name = "";
+
+        try{
+            JSONObject root = new JSONObject(result);
+            JSONArray jsonArray = root.getJSONArray("results");
+
+            for (int i = 0; i < jsonArray.length(); i++){
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+
+                name = jsonObj.getString("이름");
+                //eng_name = jsonObject.getString("eng_name");
+            }
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
 
 
-
+        arItem = new ArrayList<MyItem>();
+        mi = new MyItem(getResources().getIdentifier(eng_name, "drawable", getPackageName()), name);
+        arItem.add(mi);
 
 /*
-        arItem = new ArrayList<MyItem>();
-        MyItem mi;
         mi = new MyItem(kr.co.ipdisk.home35.ParkofJeonJu.R.drawable.parkimg_chamseam, "참새암 공원");
         arItem.add(mi);
         mi = new MyItem(kr.co.ipdisk.home35.ParkofJeonJu.R.drawable.parkimg_daga, "다가 공원");

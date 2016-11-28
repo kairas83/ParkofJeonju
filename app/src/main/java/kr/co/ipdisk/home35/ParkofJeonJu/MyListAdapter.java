@@ -44,13 +44,13 @@ public class MyListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = Inflater.inflate(layout, parent, false);
         }
-        ImageView img = (ImageView) convertView.findViewById(kr.co.ipdisk.home35.ParkofJeonJu.R.id.image);
+        ImageView img = (ImageView) convertView.findViewById(R.id.image);
         img.setImageResource(arSrc.get(position).image);
 
-        TextView txt = (TextView) convertView.findViewById(kr.co.ipdisk.home35.ParkofJeonJu.R.id.title);
+        TextView txt = (TextView) convertView.findViewById(R.id.title);
         txt.setText(arSrc.get(position).name);
 
-        Button btn = (Button) convertView.findViewById(kr.co.ipdisk.home35.ParkofJeonJu.R.id.btn);
+        Button btn = (Button) convertView.findViewById(R.id.btn);
         btn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 String str = arSrc.get(pos).name + "공원을 호출합니다.";
