@@ -33,7 +33,7 @@ public class ParkListActivity extends AppCompatActivity {
         }
 
 
-        String parkimg_name = "parkimg_chamseam";
+        String parkimg_name = "parkimg_chamseam"; // 기본이미지 임시 셋팅
         String[] name = {};
         JSONObject root;
         JSONArray jsonArray = null;
