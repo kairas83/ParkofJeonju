@@ -32,35 +32,28 @@ public class ParkListActivity extends AppCompatActivity {
             result = task.getResult();
         }
 
-
-        String[] parkimg_name = {};
-        String[] name = {};
-        JSONObject root;
-        JSONArray jsonArray = null;
-        JSONObject jsonObj;
-        ArrayList<MyItem> arItem;
+        ArrayList<MyItem> arItem = new ArrayList<MyItem>();
         MyItem mi;
 
         try {
-            root = new JSONObject(result);
-            jsonArray = root.getJSONArray("results");
-            name = new String[jsonArray.length()];
-            parkimg_name = new String[jsonArray.length()];
+            JSONObject root = new JSONObject(result);
+            JSONArray jsonArray = root.getJSONArray("results");
+            String[] name = new String[jsonArray.length()];
+            String[] parkimg_name = new String[jsonArray.length()];
 
             for (int i = 0; i < jsonArray.length(); i++) {
-                jsonObj = jsonArray.getJSONObject(i);
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
 
                 name[i] = jsonObj.getString("이름");
                 parkimg_name[i] = jsonObj.getString("parkimg_name");
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        } finally {
-            arItem = new ArrayList<MyItem>();
+
             for (int i = 0; i < jsonArray.length(); i++) {
                 mi = new MyItem(getResources().getIdentifier(parkimg_name[i], "drawable", getPackageName()), name[i]);
                 arItem.add(mi);
             }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
         MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.list_content, arItem);
