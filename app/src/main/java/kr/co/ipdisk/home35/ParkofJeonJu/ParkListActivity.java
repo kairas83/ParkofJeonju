@@ -2,6 +2,7 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 
 public class ParkListActivity extends AppCompatActivity {
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_parklist);
@@ -62,4 +64,3 @@ public class ParkListActivity extends AppCompatActivity {
         myList.setAdapter(myListAdapter);
     }
 }
-
