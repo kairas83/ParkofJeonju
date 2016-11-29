@@ -1,14 +1,12 @@
 package kr.co.ipdisk.home35.ParkofJeonJu;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +54,7 @@ public class MyListAdapter extends BaseAdapter {
                 String str = arSrc.get(position).name + "공원을 호출합니다.";
                 Toast.makeText(maincon, str, Toast.LENGTH_SHORT).show();
 
+                //TODO 토스트 대신 ParkDetailViewActivity 호출하기 extras로 name 넘겨주기
             }
         });
         return convertView;
