@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+<<<<<<< HEAD
+    <color name="colorPrimary">#b5de5b</color>
+    <color name="colorPrimaryDark">#7d993f</color>
     <color name="colorAccent">#FF4081</color>
+=======
+    <color name="colorPrimary">#b43653</color>
+    <color name="colorPrimaryDark">#7d993f</color>
+    <color name="colorAccent">#3b5e3c</color>
+>>>>>>> origin/master
 </resources>
