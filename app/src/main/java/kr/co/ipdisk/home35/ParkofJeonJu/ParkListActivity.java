@@ -33,7 +33,7 @@ public class ParkListActivity extends AppCompatActivity {
         }
 
 
-        String parkimg_name = "parkimg_chamseam"; // 기본이미지 임시 셋팅
+        String[] parkimg_name = {};
         String[] name = {};
         JSONObject root;
         JSONArray jsonArray = null;
@@ -45,19 +45,20 @@ public class ParkListActivity extends AppCompatActivity {
             root = new JSONObject(result);
             jsonArray = root.getJSONArray("results");
             name = new String[jsonArray.length()];
+            parkimg_name = new String[jsonArray.length()];
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 jsonObj = jsonArray.getJSONObject(i);
 
                 name[i] = jsonObj.getString("이름");
-                //parkimg_name = jsonObject.getString("parkimg_name");//TODO DB에 parkimg_name 칼럼 추가
+                parkimg_name[i] = jsonObj.getString("parkimg_name");
             }
         } catch (JSONException e) {
             e.printStackTrace();
         } finally {
             arItem = new ArrayList<MyItem>();
             for (int i = 0; i < jsonArray.length(); i++) {
-                mi = new MyItem(getResources().getIdentifier(parkimg_name, "drawable", getPackageName()), name[i]);
+                mi = new MyItem(getResources().getIdentifier(parkimg_name[i], "drawable", getPackageName()), name[i]);
                 arItem.add(mi);
             }
         }
