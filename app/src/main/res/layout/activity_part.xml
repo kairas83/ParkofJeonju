@@ -10,29 +10,26 @@
 
         <ImageButton
             android:layout_width="400dp"
-            android:layout_height="300dp"
-            app:srcCompat="@drawable/ic_btn_wansangoo"
-            android:id="@+id/wansangoo"
-            android:scaleType="fitXY"
-            android:onClick="wansangoo"
-            android:adjustViewBounds="true"
-            android:background="@android:color/transparent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="39dp" />
-
-        <ImageButton
-            android:layout_width="400dp"
-            android:layout_height="300dp"
+            android:layout_height="216dp"
             app:srcCompat="@drawable/ic_btn_dukjingoo"
             android:id="@+id/dukjingoo"
             android:scaleType="fitXY"
             android:onClick="dukjingoo"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="27dp"
-            android:adjustViewBounds="true"
+            android:layout_marginTop="80dp"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:layout_width="253dp"
+            android:layout_height="246dp"
+            app:srcCompat="@drawable/ic_btn_wansangoo"
+            android:id="@+id/wansangoo"
+            android:scaleType="fitXY"
+            android:onClick="wansangoo"
             android:background="@android:color/transparent"
-            />
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="78dp"
+            android:layout_marginBottom="120dp" />
     </RelativeLayout>
 </LinearLayout>
