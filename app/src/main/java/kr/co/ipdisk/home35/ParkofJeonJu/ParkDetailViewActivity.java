@@ -16,7 +16,6 @@ import org.json.JSONObject;
  */
 
 public class ParkDetailViewActivity extends AppCompatActivity {
-    //TODO 공원이름을 받아서 해당공원의 상세뷰를 출력해주는 클래스 만들기
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +62,7 @@ public class ParkDetailViewActivity extends AppCompatActivity {
                     p_place.setText(jsonObj.getString("세부주소"));
 
                     TextView p_size = (TextView) findViewById(R.id.size);
-                    p_size.setText(jsonObj.getString("면적"));
+                    p_size.setText(jsonObj.getString("면적")+" m2");
 
                     TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
                     p_phoneNumber.setText(jsonObj.getString("연락처"));

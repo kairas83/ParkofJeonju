@@ -27,7 +27,7 @@ public class RandomActivity extends AppCompatActivity {
 
         int nResult = getRandom(27, 0); //랜덤 int 출력
 
-        String name; // nResult 포지션에 있는 공원 이름
+        String name = ""; // nResult 포지션에 있는 공원 이름
 
         TextView _name = (TextView) findViewById(R.id.park_name);
         _name.setText(name);
