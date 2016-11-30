@@ -15,7 +15,7 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Handler hd = new Handler();
-        hd.postDelayed(new SplashHandler() , 1000); // 3초 후에 hd Handler 실행
+        hd.postDelayed(new SplashHandler() , 700); // 1초 후에 hd Handler 실행
     }
 
     private class SplashHandler implements Runnable{

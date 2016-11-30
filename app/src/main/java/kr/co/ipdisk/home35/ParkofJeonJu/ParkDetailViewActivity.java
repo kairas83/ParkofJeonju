@@ -57,6 +57,19 @@ public class ParkDetailViewActivity extends AppCompatActivity {
                     TextView p_name = (TextView) findViewById(R.id.name);
                     p_name.setText(jsonObj.getString("이름"));
 
+                    TextView p_part = (TextView) findViewById(R.id.part);
+                    p_part.setText(jsonObj.getString("구분"));
+
+                    TextView p_place = (TextView) findViewById(R.id.address);
+                    p_place.setText(jsonObj.getString("세부주소"));
+
+                    TextView p_size = (TextView) findViewById(R.id.size);
+                    p_size.setText(jsonObj.getString("면적")+"m2");
+
+                    TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
+                    p_phoneNumber.setText(jsonObj.getString("연락처"));
+
+
                     //TODO 위에처럼 하시면됩니다 getString("이름") 은 http://home35.ipdisk.co.kr/msd/SelectAllItem.php 참조
                 }
             }
