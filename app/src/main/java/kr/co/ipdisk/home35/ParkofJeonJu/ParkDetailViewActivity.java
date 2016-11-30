@@ -20,7 +20,7 @@ public class ParkDetailViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parkdetailview);
+        setContentView(R.layout.activity_park_detail_view);
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("이름");

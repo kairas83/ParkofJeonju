@@ -19,7 +19,7 @@ public class PartListView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_part_detailview);
+        setContentView(R.layout.activity_part_list_view);
 
         Intent intent = getIntent();
         String part = intent.getStringExtra("part");

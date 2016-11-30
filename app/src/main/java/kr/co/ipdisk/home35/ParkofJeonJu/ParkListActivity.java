@@ -15,7 +15,7 @@ public class ParkListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_parklist);
+        setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_park_list_view);
 
         String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
         phpDown task = new phpDown(test);
