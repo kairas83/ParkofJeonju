@@ -47,24 +47,35 @@ public class MyListAdapter extends BaseAdapter {
         }
         ImageButton imgbtn = (ImageButton) convertView.findViewById(R.id.imgbtn);
         imgbtn.setImageResource(arSrc.get(position).image);
-/*
+
         ImageView bench = (ImageView) convertView.findViewById(R.id.ic_shortcut_bench);
-        bench.setImageResource( arSrc.get(position).bench? getResources().getIdentifier("ic_shortcut_bench", "drawable", getPackageName()) : null);
+        if (arSrc.get(position).bench == 1)
+            bench.setImageResource(maincon.getResources().getIdentifier("ic_shortcut_bench", "drawable", maincon.getPackageName()));
+
         ImageView camera = (ImageView) convertView.findViewById(R.id.ic_shortcut_camera);
-        camera.setImageResource( arSrc.get(position).camera? getResources().getIdentifier("ic_shortcut_camera", "drawable", getPackageName()) : null);
+        if (arSrc.get(position).camera == 1)
+            camera.setImageResource(maincon.getResources().getIdentifier("ic_shortcut_camera", "drawable", maincon.getPackageName()));
+
         ImageView parking = (ImageView) convertView.findViewById(R.id.ic_shortcut_parking);
-        parking.setImageResource( arSrc.get(position).parking? getResources().getIdentifier("ic_shortcut_parking", "drawable", getPackageName()) : null);
+        if (arSrc.get(position).parking == 1)
+            parking.setImageResource(maincon.getResources().getIdentifier("ic_shortcut_parking", "drawable", maincon.getPackageName()));
+
         ImageView playground = (ImageView) convertView.findViewById(R.id.ic_shortcut_playground);
-        playground.setImageResource( arSrc.get(position).playground? getResources().getIdentifier("ic_shortcut_playground", "drawable", getPackageName()) : null);
+        if (arSrc.get(position).playground == 1)
+            playground.setImageResource(maincon.getResources().getIdentifier("ic_shortcut_playground", "drawable", maincon.getPackageName()));
+
         ImageView pulling_up_training_silhouette = (ImageView) convertView.findViewById(R.id.ic_shortcut_pulling_up_training_silhouette);
-        pulling_up_training_silhouette.setImageResource( arSrc.get(position).pulling_up_training_silhouette? getResources().getIdentifier("ic_shortcut_pulling_up_training_silhouette", "drawable", getPackageName()) : null);
-        ImageView road_with_two_placeholders = (ImageView) convertView.findViewById(R.id.ic_shortcut_road_with_two_placeholders);
-        road_with_two_placeholders.setImageResource( arSrc.get(position).road_with_two_placeholders? getResources().getIdentifier("ic_shortcut_road_with_two_placeholders", "drawable", getPackageName()) : null);
+        if (arSrc.get(position).pulling_up_training_silhouette == 1)
+            pulling_up_training_silhouette.setImageResource(maincon.getResources().getIdentifier("ic_shortcut_pulling_up_training_silhouette", "drawable", maincon.getPackageName()));
+
         ImageView roundabout = (ImageView) convertView.findViewById(R.id.ic_shortcut_roundabout);
-        roundabout.setImageResource( arSrc.get(position).roundabout? getResources().getIdentifier("ic_shortcut_roundabout", "drawable", getPackageName()) : null);
+        if (arSrc.get(position).roundabout == 1)
+            roundabout.setImageResource(maincon.getResources().getIdentifier("ic_shortcut_roundabout", "drawable", maincon.getPackageName()));
+
         ImageView toilet = (ImageView) convertView.findViewById(R.id.ic_shortcut_toilet);
-        toilet.setImageResource( arSrc.get(position).toilet? getResources().getIdentifier("ic_shortcut_toilet", "drawable", getPackageName()) : null);
-*/
+        if (arSrc.get(position).toilet == 1)
+            toilet.setImageResource(maincon.getResources().getIdentifier("ic_shortcut_toilet", "drawable", maincon.getPackageName()));
+
         TextView txt = (TextView) convertView.findViewById(R.id.title);
         txt.setText(arSrc.get(position).name);
 
