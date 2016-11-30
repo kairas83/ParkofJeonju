@@ -24,7 +24,6 @@ public class ParkDetailViewActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("이름");
-
         TextView park_name = (TextView) findViewById(R.id.park_name);
         park_name.setText(name);
 
@@ -64,7 +63,7 @@ public class ParkDetailViewActivity extends AppCompatActivity {
                     p_place.setText(jsonObj.getString("세부주소"));
 
                     TextView p_size = (TextView) findViewById(R.id.size);
-                    p_size.setText(jsonObj.getString("면적")+"m2");
+                    p_size.setText(jsonObj.getString("면적"));
 
                     TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
                     p_phoneNumber.setText(jsonObj.getString("연락처"));

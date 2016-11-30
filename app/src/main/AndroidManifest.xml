@@ -54,8 +54,11 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
 
-         <activity
+        <activity
             android:name=".PartActivity">
+        </activity>
+        <activity
+            android:name=".ParkDetailViewActivity">
         </activity>
         <activity
             android:name=".PartListView">
