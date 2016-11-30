@@ -5,10 +5,31 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
  */
 
 class MyItem {
-    MyItem(int aimage, String aName) {
-        image = aimage;
-        name = aName;
+    MyItem( String name, int image) {
+            //int bench, int camera, int parking, int playground, int pulling_up_training_silhouette, int road_with_two_placeholders, int roundabout, int toilet) {
+        this.name = name;
+        this.image = image;
+/*
+        this.bench = bench;
+        this.camera = camera;
+        this.parking = parking;
+        this.playground = playground;
+        this.pulling_up_training_silhouette = pulling_up_training_silhouette;
+        this.road_with_two_placeholders = road_with_two_placeholders;
+        this.roundabout = roundabout;
+        this.toilet = toilet;
+*/
     }
-    int image;
     String name;
+    int image;
+/*
+    int bench;
+    int camera;
+    int parking;
+    int playground;
+    int pulling_up_training_silhouette;
+    int road_with_two_placeholders;
+    int roundabout;
+    int toilet;
+*/
 }

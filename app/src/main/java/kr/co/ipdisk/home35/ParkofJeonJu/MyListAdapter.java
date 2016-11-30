@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +47,24 @@ public class MyListAdapter extends BaseAdapter {
         }
         ImageButton imgbtn = (ImageButton) convertView.findViewById(R.id.imgbtn);
         imgbtn.setImageResource(arSrc.get(position).image);
-
+/*
+        ImageView bench = (ImageView) convertView.findViewById(R.id.ic_shortcut_bench);
+        bench.setImageResource(arSrc.get(position).bench);
+        ImageView camera = (ImageView) convertView.findViewById(R.id.ic_shortcut_camera);
+        camera.setImageResource(arSrc.get(position).camera);
+        ImageView parking = (ImageView) convertView.findViewById(R.id.ic_shortcut_parking);
+        parking.setImageResource(arSrc.get(position).parking);
+        ImageView playground = (ImageView) convertView.findViewById(R.id.ic_shortcut_playground);
+        playground.setImageResource(arSrc.get(position).playground);
+        ImageView pulling_up_training_silhouette = (ImageView) convertView.findViewById(R.id.ic_shortcut_pulling_up_training_silhouette);
+        pulling_up_training_silhouette.setImageResource(arSrc.get(position).pulling_up_training_silhouette);
+        ImageView road_with_two_placeholders = (ImageView) convertView.findViewById(R.id.ic_shortcut_road_with_two_placeholders);
+        road_with_two_placeholders.setImageResource(arSrc.get(position).road_with_two_placeholders);
+        ImageView roundabout = (ImageView) convertView.findViewById(R.id.ic_shortcut_roundabout);
+        roundabout.setImageResource(arSrc.get(position).roundabout);
+        ImageView toilet = (ImageView) convertView.findViewById(R.id.ic_shortcut_toilet);
+        toilet.setImageResource(arSrc.get(position).toilet);
+*/
         TextView txt = (TextView) convertView.findViewById(R.id.title);
         txt.setText(arSrc.get(position).name);
 

@@ -40,18 +40,23 @@ public class ParkListActivity extends AppCompatActivity {
         try {
             JSONObject root = new JSONObject(result);
             JSONArray jsonArray = root.getJSONArray("results");
-            String[] name = new String[jsonArray.length()];
-            String[] parkimg_name = new String[jsonArray.length()];
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-                name[i] = jsonObj.getString("이름");
-                parkimg_name[i] = jsonObj.getString("parkimg_name");
-            }
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                mi = new MyItem(getResources().getIdentifier(parkimg_name[i], "drawable", getPackageName()), name[i]);
+                mi = new MyItem(jsonObj.getString("이름"), getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
+                /*
+                mi = new MyItem(jsonObj.getString("이름"),
+                        getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()),
+                        (jsonObj.getBoolean("bench") ? getResources().getIdentifier("ic_shortcut_bench", "drawable", getPackageName()) : null),
+                        (jsonObj.getBoolean("camera") ? getResources().getIdentifier("ic_shortcut_camera", "drawable", getPackageName()) : null),
+                        (jsonObj.getBoolean("parking") ? getResources().getIdentifier("ic_shortcut_parking", "drawable", getPackageName()) : null),
+                        (jsonObj.getBoolean("playground") ? getResources().getIdentifier("ic_shortcut_playground", "drawable", getPackageName()) : null),
+                        (jsonObj.getBoolean("pulling_up_training_silhouette") ? getResources().getIdentifier("ic_shortcut_pulling_up_training_silhouette", "drawable", getPackageName()) : null),
+                        (jsonObj.getBoolean("road_with_two_placeholders") ? getResources().getIdentifier("ic_shortcut_road_with_two_placeholders", "drawable", getPackageName()) : null),
+                        (jsonObj.getBoolean("roundabout") ? getResources().getIdentifier("ic_shortcut_roundabout", "drawable", getPackageName()) : null),
+                        (jsonObj.getBoolean("toilet") ? getResources().getIdentifier("ic_shortcut_toilet", "drawable", getPackageName()) : null));
+                */
                 arItem.add(mi);
             }
         } catch (JSONException e) {
