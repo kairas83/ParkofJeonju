@@ -61,7 +61,7 @@
             android:name=".PartActivity">
         </activity>
         <activity
-            android:name=".PartDetailViewActivity">
+            android:name=".PartListView">
         </activity>
 
 

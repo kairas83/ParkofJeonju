@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * Created by kaira on 2016-11-30.
  */
 
-public class PartDetailViewActivity extends AppCompatActivity {
+public class PartListView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

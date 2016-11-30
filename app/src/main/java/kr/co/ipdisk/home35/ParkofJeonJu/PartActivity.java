@@ -19,14 +19,14 @@ public class PartActivity extends AppCompatActivity {
 
     public void dukjingoo(View view) {
         Intent intent;
-        intent = new Intent(getApplicationContext(), PartDetailViewActivity.class);
+        intent = new Intent(getApplicationContext(), PartListView.class);
         intent.putExtra("part", "덕진구");
         startActivity(intent);
     }
 
     public void wansangoo(View view) {
         Intent intent;
-        intent = new Intent(getApplicationContext(), PartDetailViewActivity.class);
+        intent = new Intent(getApplicationContext(), PartListView.class);
         intent.putExtra("part", "완산구");
         startActivity(intent);
     }
