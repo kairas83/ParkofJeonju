@@ -25,13 +25,6 @@ public class RandomActivity extends AppCompatActivity {
 
         mRand = new Random();
 
-        int nResult = getRandom(27, 0); //랜덤 int 출력
-
-        String name = ""; // nResult 포지션에 있는 공원 이름
-
-        TextView _name = (TextView) findViewById(R.id.park_name);
-        _name.setText(name);
-
         String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
         phpDown task = new phpDown(test);
 
@@ -51,41 +44,33 @@ public class RandomActivity extends AppCompatActivity {
             JSONObject root = new JSONObject(result);
             JSONArray jsonArray = root.getJSONArray("results");
 
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObj = jsonArray.getJSONObject(i);
+            int nResult =  mRand.nextInt(jsonArray.length());
 
-                if (jsonObj.getString("이름").equals(name)) {
-                    ImageView p_image = (ImageView) findViewById(R.id.image);
-                    p_image.setImageResource(getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
+            JSONObject jsonObj = jsonArray.getJSONObject(nResult);
 
-                    TextView p_name = (TextView) findViewById(R.id.name);
-                    p_name.setText(jsonObj.getString("이름"));
+            TextView park_name = (TextView) findViewById(R.id.park_name);
+            park_name.setText(jsonObj.getString("이름"));
 
-                    TextView p_part = (TextView) findViewById(R.id.part);
-                    p_part.setText(jsonObj.getString("구분"));
+            ImageView p_image = (ImageView) findViewById(R.id.image);
+            p_image.setImageResource(getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
 
-                    TextView p_place = (TextView) findViewById(R.id.address);
-                    p_place.setText(jsonObj.getString("세부주소"));
+            TextView p_name = (TextView) findViewById(R.id.name);
+            p_name.setText(jsonObj.getString("이름"));
 
-                    TextView p_size = (TextView) findViewById(R.id.size);
-                    p_size.setText(jsonObj.getString("면적")+"m2");
+            TextView p_part = (TextView) findViewById(R.id.part);
+            p_part.setText(jsonObj.getString("구분"));
 
-                    TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
-                    p_phoneNumber.setText(jsonObj.getString("연락처"));
+            TextView p_place = (TextView) findViewById(R.id.address);
+            p_place.setText(jsonObj.getString("세부주소"));
 
+            TextView p_size = (TextView) findViewById(R.id.size);
+            p_size.setText(jsonObj.getString("면적")+"m2");
 
-                }
-            }
+            TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
+            p_phoneNumber.setText(jsonObj.getString("연락처"));
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    public int getRandom(int max, int offset) {
-
-        int nResult = mRand.nextInt(max) + offset;
-
-        return nResult;
-
     }
 }
