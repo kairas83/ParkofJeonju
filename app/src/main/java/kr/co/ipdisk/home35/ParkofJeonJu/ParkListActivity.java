@@ -44,19 +44,18 @@ public class ParkListActivity extends AppCompatActivity {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-                mi = new MyItem(jsonObj.getString("이름"), getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
-                /*
+                //mi = new MyItem(jsonObj.getString("이름"), getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
+
                 mi = new MyItem(jsonObj.getString("이름"),
                         getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()),
-                        jsonObj.getBoolean("bench"),
-                        jsonObj.getBoolean("camera"),
-                        jsonObj.getBoolean("parking"),
-                        jsonObj.getBoolean("playground"),
-                        jsonObj.getBoolean("pulling_up_training_silhouette"),
-                        jsonObj.getBoolean("road_with_two_placeholders"),
-                        jsonObj.getBoolean("roundabout"),
-                        jsonObj.getBoolean("toilet");
-                */
+                        jsonObj.getInt("bench"),
+                        jsonObj.getInt("camera"),
+                        jsonObj.getInt("parking"),
+                        jsonObj.getInt("playground"),
+                        jsonObj.getInt("pulling_up_training_silhouette"),
+                        jsonObj.getInt("roundabout"),
+                        jsonObj.getInt("toilet"));
+
                 arItem.add(mi);
             }
         } catch (JSONException e) {
@@ -69,3 +68,4 @@ public class ParkListActivity extends AppCompatActivity {
         myList.setAdapter(myListAdapter);
     }
 }
+

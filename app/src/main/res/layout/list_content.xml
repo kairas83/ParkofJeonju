@@ -31,7 +31,6 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@id/title"
-        android:src="@drawable/ic_shortcut_bench"
         android:layout_toRightOf="@id/title"/>
 
     <ImageView
@@ -39,47 +38,41 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@id/title"
-        android:layout_toRightOf="@id/ic_shortcut_bench"
-        android:src="@drawable/ic_shortcut_camera"/>
+        android:layout_toRightOf="@id/ic_shortcut_bench"/>
 
     <ImageView
         android:id="@+id/ic_shortcut_parking"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@id/title"
-        android:layout_toRightOf="@id/ic_shortcut_camera"
-        android:src="@drawable/ic_shortcut_parking"/>
+        android:layout_toRightOf="@id/ic_shortcut_camera"/>
 
     <ImageView
         android:id="@+id/ic_shortcut_playground"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@id/title"
-        android:layout_toRightOf="@id/ic_shortcut_parking"
-        android:src="@drawable/ic_shortcut_playground"/>
+        android:layout_toRightOf="@id/ic_shortcut_parking"/>
 
     <ImageView
         android:id="@+id/ic_shortcut_pulling_up_training_silhouette"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@id/title"
-        android:layout_toRightOf="@id/ic_shortcut_playground"
-        android:src="@drawable/ic_shortcut_pulling_up_training_silhouette"/>
+        android:layout_toRightOf="@id/ic_shortcut_playground"/>
 
     <ImageView
         android:id="@+id/ic_shortcut_roundabout"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@id/title"
-        android:layout_toRightOf="@id/ic_shortcut_pulling_up_training_silhouette"
-        android:src="@drawable/ic_shortcut_roundabout"/>
+        android:layout_toRightOf="@id/ic_shortcut_pulling_up_training_silhouette"/>
 
     <ImageView
         android:id="@+id/ic_shortcut_toilet"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignBottom="@id/title"
-        android:layout_toRightOf="@id/ic_shortcut_roundabout"
-        android:src="@drawable/ic_shortcut_toilet"/>
+        android:layout_toRightOf="@id/ic_shortcut_roundabout"/>
 
 </RelativeLayout>

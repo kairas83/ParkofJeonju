@@ -37,9 +37,16 @@
 		\"경도\":\"$row[경도]\",
 		\"면적\":\"$row[면적]\",
 		\"연락처\":\"$row[연락처]\",
-		\"parkimg_name\":\"$row[parkimg_name]\"}";
- 
-		// 마지막 레코드 이전엔 ,를 붙인다. 그래야 데이터 구분이 되니깐.  
+		\"parkimg_name\":\"$row[parkimg_name]\",
+		\"bench\":\"$row[bench]\",
+		\"camera\":\"$row[camera]\",
+		\"parking\":\"$row[parking]\",
+		\"playground\":\"$row[playground]\",
+		\"pulling_up_training_silhouette\":\"$row[pulling_up_training_silhouette]\",
+		\"roundabout\":\"$row[roundabout]\",
+		\"toilet\":\"$row[toilet]\"}";
+
+		// 마지막 레코드 이전엔 ,를 붙인다. 그래야 데이터 구분이 되니깐.
 		if($i<$total_record-1){
 			echo ",";
 		}
