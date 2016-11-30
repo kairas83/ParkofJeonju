@@ -56,7 +56,12 @@
 
         <activity
             android:name=".ParkDetailViewActivity">
-
+        </activity>
+        <activity
+            android:name=".PartActivity">
+        </activity>
+        <activity
+            android:name=".PartDetailViewActivity">
         </activity>
 
 

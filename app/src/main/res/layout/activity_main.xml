@@ -58,7 +58,8 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_btn_precinct"
                 android:background="@android:color/transparent"
-                android:layout_margin="20dp"/>
+                android:layout_margin="20dp"
+                android:onClick="part"/>
 
             <ImageButton
                 android:layout_width="wrap_content"

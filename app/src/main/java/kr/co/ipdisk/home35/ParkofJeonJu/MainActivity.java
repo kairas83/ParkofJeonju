@@ -117,4 +117,10 @@ implements NavigationView.OnNavigationItemSelectedListener {
         intent = new Intent(getApplicationContext(), ParkListActivity.class);
         startActivity(intent);
     }
+
+    public void part(View view) {
+        Intent intent;
+        intent = new Intent(getApplicationContext(), PartActivity.class);
+        startActivity(intent);
+    }
 }

@@ -48,14 +48,14 @@ public class ParkListActivity extends AppCompatActivity {
                 /*
                 mi = new MyItem(jsonObj.getString("이름"),
                         getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()),
-                        (jsonObj.getBoolean("bench") ? getResources().getIdentifier("ic_shortcut_bench", "drawable", getPackageName()) : null),
-                        (jsonObj.getBoolean("camera") ? getResources().getIdentifier("ic_shortcut_camera", "drawable", getPackageName()) : null),
-                        (jsonObj.getBoolean("parking") ? getResources().getIdentifier("ic_shortcut_parking", "drawable", getPackageName()) : null),
-                        (jsonObj.getBoolean("playground") ? getResources().getIdentifier("ic_shortcut_playground", "drawable", getPackageName()) : null),
-                        (jsonObj.getBoolean("pulling_up_training_silhouette") ? getResources().getIdentifier("ic_shortcut_pulling_up_training_silhouette", "drawable", getPackageName()) : null),
-                        (jsonObj.getBoolean("road_with_two_placeholders") ? getResources().getIdentifier("ic_shortcut_road_with_two_placeholders", "drawable", getPackageName()) : null),
-                        (jsonObj.getBoolean("roundabout") ? getResources().getIdentifier("ic_shortcut_roundabout", "drawable", getPackageName()) : null),
-                        (jsonObj.getBoolean("toilet") ? getResources().getIdentifier("ic_shortcut_toilet", "drawable", getPackageName()) : null));
+                        jsonObj.getBoolean("bench"),
+                        jsonObj.getBoolean("camera"),
+                        jsonObj.getBoolean("parking"),
+                        jsonObj.getBoolean("playground"),
+                        jsonObj.getBoolean("pulling_up_training_silhouette"),
+                        jsonObj.getBoolean("road_with_two_placeholders"),
+                        jsonObj.getBoolean("roundabout"),
+                        jsonObj.getBoolean("toilet");
                 */
                 arItem.add(mi);
             }
