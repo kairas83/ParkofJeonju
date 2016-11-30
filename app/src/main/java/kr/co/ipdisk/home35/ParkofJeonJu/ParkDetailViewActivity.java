@@ -69,8 +69,6 @@ public class ParkDetailViewActivity extends AppCompatActivity {
                     TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
                     p_phoneNumber.setText(jsonObj.getString("연락처"));
 
-
-                    //TODO 위에처럼 하시면됩니다 getString("이름") 은 http://home35.ipdisk.co.kr/msd/SelectAllItem.php 참조
                 }
             }
         } catch (JSONException e) {

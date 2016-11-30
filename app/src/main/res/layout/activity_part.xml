@@ -22,22 +22,28 @@
         <ImageButton
             android:layout_width="400dp"
             android:layout_height="300dp"
-            app:srcCompat="@drawable/ic_btn_dukjingoo"
-            android:id="@+id/dukjingoo"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/ic_btn_wansangoo"
+            android:id="@+id/wansangoo"
             android:scaleType="fitXY"
-            android:onClick="dukjingoo"/>
+            android:onClick="wansangoo"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="39dp" />
 
         <ImageButton
             android:layout_width="400dp"
             android:layout_height="300dp"
-            app:srcCompat="@drawable/ic_btn_wansangoo"
-            android:id="@+id/wansangoo"
+            app:srcCompat="@drawable/ic_btn_dukjingoo"
+            android:id="@+id/dukjingoo"
             android:scaleType="fitXY"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
+            android:onClick="dukjingoo"
+            android:layout_marginTop="92dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:onClick="wansangoo"/>
+            android:layout_marginEnd="26dp" />
     </RelativeLayout>
 </LinearLayout>
