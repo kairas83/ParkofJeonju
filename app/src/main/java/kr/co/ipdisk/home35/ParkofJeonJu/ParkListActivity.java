@@ -2,7 +2,6 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -17,7 +16,6 @@ public class ParkListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_parklist);
-        setTitle("공원 목록");
 
         String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
         phpDown task = new phpDown(test);
@@ -43,8 +41,6 @@ public class ParkListActivity extends AppCompatActivity {
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
-
-                //mi = new MyItem(jsonObj.getString("이름"), getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
 
                 mi = new MyItem(jsonObj.getString("이름"),
                         getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()),
