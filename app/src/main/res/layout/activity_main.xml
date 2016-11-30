@@ -44,7 +44,8 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/ic_btn_nearest"
                 android:background="@android:color/transparent"
-                android:layout_margin="20dp"/>
+                android:layout_margin="20dp"
+                android:onClick="nearest"/>
         </TableRow>
 
         <TableRow>

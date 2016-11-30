@@ -1,5 +1,6 @@
 package kr.co.ipdisk.home35.ParkofJeonJu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -48,26 +49,9 @@ public class RandomActivity extends AppCompatActivity {
 
             JSONObject jsonObj = jsonArray.getJSONObject(nResult);
 
-            TextView park_name = (TextView) findViewById(R.id.park_name);
-            park_name.setText(jsonObj.getString("이름"));
-
-            ImageView p_image = (ImageView) findViewById(R.id.image);
-            p_image.setImageResource(getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
-
-            TextView p_name = (TextView) findViewById(R.id.name);
-            p_name.setText(jsonObj.getString("이름"));
-
-            TextView p_part = (TextView) findViewById(R.id.part);
-            p_part.setText(jsonObj.getString("구분"));
-
-            TextView p_place = (TextView) findViewById(R.id.address);
-            p_place.setText(jsonObj.getString("세부주소"));
-
-            TextView p_size = (TextView) findViewById(R.id.size);
-            p_size.setText(jsonObj.getString("면적")+"m2");
-
-            TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
-            p_phoneNumber.setText(jsonObj.getString("연락처"));
+            Intent intent = new Intent(getApplicationContext(), ParkDetailViewActivity.class);
+            intent.putExtra("이름", jsonObj.getString("이름"));
+            startActivity(intent);
 
         } catch (JSONException e) {
             e.printStackTrace();
