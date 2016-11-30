@@ -68,10 +68,11 @@
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
                 android:layout_weight="1"
-                android:src="@drawable/ic_btn_category"
-                android:id="@+id/divide"
+                android:src="@drawable/ic_btn_random"
+                android:id="@+id/btn_random"
                 android:background="@android:color/transparent"
-                android:layout_margin="20dp"/>
+                android:layout_margin="20dp"
+                android:onClick="random"/>
         </TableRow>
     </TableLayout>
 </RelativeLayout>

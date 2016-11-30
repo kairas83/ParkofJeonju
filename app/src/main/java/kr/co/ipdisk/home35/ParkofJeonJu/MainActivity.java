@@ -123,4 +123,10 @@ implements NavigationView.OnNavigationItemSelectedListener {
         intent = new Intent(getApplicationContext(), PartActivity.class);
         startActivity(intent);
     }
+
+    public void random(View view) {
+        Intent intent;
+        intent = new Intent(getApplicationContext(), RandomActivity.class);
+        startActivity(intent);
+    }
 }
