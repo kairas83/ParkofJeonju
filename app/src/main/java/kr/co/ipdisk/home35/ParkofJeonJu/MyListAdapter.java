@@ -52,13 +52,11 @@ public class MyListAdapter extends BaseAdapter {
 
         imgbtn.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                String str = arSrc.get(position).name + "공원을 호출합니다.";
-                Toast.makeText(maincon, str, Toast.LENGTH_SHORT).show();
+                String str = arSrc.get(position).name;
 
                 Intent intent = new Intent(maincon, ParkDetailViewActivity.class);
                 intent.putExtra("이름", str);
                 maincon.startActivity(intent);
-                //TODO 토스트 대신 ParkDetailViewActivity 호출하기 extras로 name 넘겨주기
             }
         });
         return convertView;

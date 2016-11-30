@@ -2,14 +2,15 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -22,18 +23,13 @@ public class ParkDetailViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.detail_park);
-
+        setContentView(R.layout.activity_parkdetailview);
 
         Intent intent = getIntent();
-        String park_name = intent.getExtras().getString("이름");
+        String name = intent.getStringExtra("이름");
 
-        /*
-
-        ===========================================================================
-
-         */
-
+        TextView park_name = (TextView) findViewById(R.id.park_name);
+        park_name.setText(name);
 
         String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
         phpDown task = new phpDown(test);
@@ -50,38 +46,24 @@ public class ParkDetailViewActivity extends AppCompatActivity {
             result = task.getResult();
         }
 
-        ArrayList<MyItem> arItem = new ArrayList<MyItem>();
-        MyItem mi;
-
         try {
             JSONObject root = new JSONObject(result);
             JSONArray jsonArray = root.getJSONArray("results");
-            String[] name = new String[jsonArray.length()];
-            String[] parkimg_name = new String[jsonArray.length()];
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-                name[i] = jsonObj.getString("이름");
-                parkimg_name[i] = jsonObj.getString("parkimg_name");
-            }
+                if (jsonObj.getString("이름").equals(name)) {
+                    ImageView p_image = (ImageView) findViewById(R.id.image);
+                    p_image.setImageResource(getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
 
-            for (int i = 0; i < jsonArray.length(); i++) {
-                mi = new MyItem(getResources().getIdentifier(parkimg_name[i], "drawable", getPackageName()), name[i]);
-                arItem.add(mi);
+                    TextView p_name = (TextView) findViewById(R.id.name);
+                    p_name.setText(jsonObj.getString("이름"));
+                }
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.detail_park, arItem);
-
-        ListView myList = (ListView) findViewById(R.id.list);
-        myList.setAdapter(myListAdapter);
-
-        /*
-        =================================================================================================================
-         */
     }
 }
 
