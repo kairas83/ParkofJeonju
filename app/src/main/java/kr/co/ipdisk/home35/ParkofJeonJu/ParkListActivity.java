@@ -40,18 +40,23 @@ public class ParkListActivity extends AppCompatActivity {
         try {
             JSONObject root = new JSONObject(result);
             JSONArray jsonArray = root.getJSONArray("results");
-            String[] name = new String[jsonArray.length()];
-            String[] parkimg_name = new String[jsonArray.length()];
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-                name[i] = jsonObj.getString("이름");
-                parkimg_name[i] = jsonObj.getString("parkimg_name");
-            }
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                mi = new MyItem(getResources().getIdentifier(parkimg_name[i], "drawable", getPackageName()), name[i]);
+                mi = new MyItem(jsonObj.getString("이름"), getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
+                /*
+                mi = new MyItem(jsonObj.getString("이름"),
+                        getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()),
+                        jsonObj.getBoolean("bench"),
+                        jsonObj.getBoolean("camera"),
+                        jsonObj.getBoolean("parking"),
+                        jsonObj.getBoolean("playground"),
+                        jsonObj.getBoolean("pulling_up_training_silhouette"),
+                        jsonObj.getBoolean("road_with_two_placeholders"),
+                        jsonObj.getBoolean("roundabout"),
+                        jsonObj.getBoolean("toilet");
+                */
                 arItem.add(mi);
             }
         } catch (JSONException e) {
