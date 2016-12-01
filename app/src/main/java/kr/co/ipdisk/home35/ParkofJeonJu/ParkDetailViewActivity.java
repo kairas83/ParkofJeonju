@@ -2,7 +2,6 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,19 +9,32 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.support.v4.app.FragmentActivity;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Created by LG on 2016-11-23.
  */
 
-public class ParkDetailViewActivity extends AppCompatActivity {
+public class ParkDetailViewActivity extends FragmentActivity implements OnMapReadyCallback {
+    String name = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_park_detail_view);
 
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
         Intent intent = getIntent();
-        String name = intent.getStringExtra("이름");
+        name = intent.getStringExtra("이름");
         TextView park_name = (TextView) findViewById(R.id.park_name);
         park_name.setText(name);
 
@@ -72,6 +84,47 @@ public class ParkDetailViewActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onMapReady(GoogleMap map) {
+        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
+        phpDown task = new phpDown(test);
+
+        task.start();
+        String result;
+
+        try {
+            task.join();
+            System.out.println("waiting... for result");
+        } catch (InterruptedException e) {
+
+        } finally {
+            result = task.getResult();
+        }
+
+        Double Lat = null;
+        Double Lng = null;
+        try {
+            JSONObject root = new JSONObject(result);
+            JSONArray jsonArray = root.getJSONArray("results");
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObj = jsonArray.getJSONObject(i);
+
+                if (jsonObj.getString("이름").equals(name)) {
+                    Lat = jsonObj.getDouble("위도");
+                    Lng = jsonObj.getDouble("경도");
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        // Add a marker in Sydney, Australia, and move the camera.
+        LatLng park = new LatLng(Lat, Lng);
+        map.addMarker(new MarkerOptions().position(park).title(name));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(park, 18));
+
     }
 }
 

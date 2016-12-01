@@ -25,15 +25,15 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".ParkListActivity"/>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ParkListActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -50,19 +50,10 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps">
         </activity>
-        <activity
-            android:name=".PartActivity">
-        </activity>
-        <activity
-            android:name=".ParkDetailViewActivity">
-        </activity>
-        <activity
-            android:name=".PartListView">
-        </activity>
-        <activity
-            android:name=".RandomActivity">
-        </activity>
-
+        <activity android:name=".PartActivity"></activity>
+        <activity android:name=".ParkDetailViewActivity"></activity>
+        <activity android:name=".PartListView"></activity>
+        <activity android:name=".RandomActivity"></activity>
     </application>
 
 </manifest>

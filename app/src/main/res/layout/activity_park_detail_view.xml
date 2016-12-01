@@ -1,40 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/park_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="16dp"
+            android:textSize="30dp"
+            android:padding="15dp"
             android:text="공원 이름" />
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="400dp"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/park_name"
             android:layout_centerHorizontal="true" />
 
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/google_maps"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <fragment
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:id="@+id/map"
             android:layout_below="@id/image"
-            android:layout_centerHorizontal="true">
-        </com.google.android.gms.maps.MapView>
+            tools:context=".ParkDetailViewActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
 
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/google_maps"
+                android:layout_below="@id/map"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="16dp">
 

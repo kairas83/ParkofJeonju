@@ -17,7 +17,7 @@
             android:onClick="dukjingoo"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="100dp"
             android:background="@android:color/transparent"/>
 
         <ImageButton
@@ -28,8 +28,8 @@
             android:scaleType="fitXY"
             android:onClick="wansangoo"
             android:background="@android:color/transparent"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="78dp"
-            android:layout_marginBottom="120dp" />
+            android:layout_marginTop="220dp" />
     </RelativeLayout>
 </LinearLayout>
