@@ -7,9 +7,10 @@ android {
         applicationId "kr.co.ipdisk.home35.ParkofJuenJu"
         minSdkVersion 19
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -29,4 +30,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:8.4.0'
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services:10.0.0'
+    compile 'com.android.support:multidex:1.0.1'
 }
