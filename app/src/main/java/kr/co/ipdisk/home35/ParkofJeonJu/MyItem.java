@@ -5,7 +5,7 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
  */
 
 class MyItem {
-    MyItem( String name, int image, int bench, int camera, int parking, int playground, int pulling_up_training_silhouette, int roundabout, int toilet) {
+    MyItem( String name, String image, int bench, int camera, int parking, int playground, int pulling_up_training_silhouette, int roundabout, int toilet) {
         this.name = name;
         this.image = image;
 
@@ -18,7 +18,7 @@ class MyItem {
         this.toilet = toilet;
     }
     String name;
-    int image;
+    String image;
 
     int bench;
     int camera;

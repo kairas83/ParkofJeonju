@@ -43,7 +43,7 @@ public class ParkListActivity extends AppCompatActivity {
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
 
                 mi = new MyItem(jsonObj.getString("이름"),
-                        getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()),
+                        jsonObj.getString("parkimg_name"),
                         jsonObj.getInt("bench"),
                         jsonObj.getInt("camera"),
                         jsonObj.getInt("parking"),

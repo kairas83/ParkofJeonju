@@ -46,7 +46,10 @@ public class MyListAdapter extends BaseAdapter {
             convertView = Inflater.inflate(layout, parent, false);
         }
         ImageButton imgbtn = (ImageButton) convertView.findViewById(R.id.imgbtn);
-        imgbtn.setImageResource(arSrc.get(position).image);
+        if (arSrc.get(position).image == "")
+            imgbtn.setImageResource(maincon.getResources().getIdentifier("parkimg_default", "drawable", maincon.getPackageName()));
+        else
+            imgbtn.setImageResource(maincon.getResources().getIdentifier(arSrc.get(position).image, "drawable", maincon.getPackageName()));
 
         ImageView bench = (ImageView) convertView.findViewById(R.id.ic_shortcut_bench);
         if (arSrc.get(position).bench == 1)

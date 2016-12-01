@@ -52,7 +52,7 @@ public class PartListView extends AppCompatActivity {
                 if (jsonObj.getString("구").equals(part)) {
 
                     mi = new MyItem(jsonObj.getString("이름"),
-                            getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()),
+                            jsonObj.getString("parkimg_name"),
                             jsonObj.getInt("bench"),
                             jsonObj.getInt("camera"),
                             jsonObj.getInt("parking"),
