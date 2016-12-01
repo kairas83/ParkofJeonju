@@ -3,145 +3,108 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:padding="16dp">
 
+        <TextView
+            android:id="@+id/park_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:text="공원 이름" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/park_name"
+            android:layout_centerHorizontal="true" />
 
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/google_maps"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/image"
+            android:layout_centerHorizontal="true">
+        </com.google.android.gms.maps.MapView>
 
-            <TextView
-                android:id="@+id/park_name"
+            <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/google_maps"
                 android:layout_centerHorizontal="true"
-                android:layout_margin="16dp"
-                android:text="공원 이름" />
+                android:layout_margin="16dp">
 
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="400dp"
-                android:layout_height="200dp"
-                android:layout_below="@id/park_name"
-                android:layout_centerHorizontal="true" />
+                <TableRow android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="공원 이름 : "/>
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
 
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/google_maps"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_below="@id/image"
-                android:layout_centerHorizontal="true">
+                <TableRow android:padding="16dp">
 
-            </com.google.android.gms.maps.MapView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="분류 : " />
 
+                    <TextView
+                        android:id="@+id/part"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
+                </TableRow>
 
-                <TableLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/google_maps"
-                    android:layout_centerHorizontal="true"
-                    android:layout_margin="16dp"
+                <TableRow android:padding="16dp">
 
-                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="위치 :" />
 
-                    <TableRow android:padding="16dp">
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                </TableRow>
 
-                            android:text="공원 이름 : "
+                <TableRow android:padding="16dp">
 
-                            />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                        <TextView
-                            android:id="@+id/name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:text="면적 : " />
 
-                            />
+                    <TextView
+                        android:id="@+id/size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
-                    </TableRow>
+                </TableRow>
 
-                    <TableRow android:padding="16dp">
+                <TableRow android:padding="16dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="분류 : " />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                        <TextView
-                            android:id="@+id/part"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        android:text="연락처 : " />
 
-                            />
-
-                    </TableRow>
-
-                    <TableRow android:padding="16dp">
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:text="위치 :" />
-
-                        <TextView
-                            android:id="@+id/address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            />
-
-                    </TableRow>
-
-                    <TableRow android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:text="면적 : " />
-
-                        <TextView
-                            android:id="@+id/size"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            />
-
-                    </TableRow>
-
-                    <TableRow android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            android:text="연락처 : " />
-
-                        <TextView
-                            android:id="@+id/phone_number"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-
-                            />
-
-                    </TableRow>
-
-                </TableLayout>
-
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
+                    <TextView
+                        android:id="@+id/phone_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </TableRow>
+            </TableLayout>
+    </RelativeLayout>
 </ScrollView>

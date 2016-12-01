@@ -56,5 +56,7 @@ public class RandomActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        finish();
     }
 }
