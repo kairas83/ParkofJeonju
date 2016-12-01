@@ -46,7 +46,7 @@ public class phpDown extends Thread {
                 int resCode = conn.getResponseCode();
                 if (resCode == HttpURLConnection.HTTP_OK) {
                     BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                    String line = null;
+                    String line;
                     while(true) {
                         line = reader.readLine();
                         if (line == null) {

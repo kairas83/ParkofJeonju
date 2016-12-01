@@ -1,7 +1,9 @@
 package kr.co.ipdisk.home35.ParkofJeonJu;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.support.v4.app.FragmentActivity;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -35,6 +38,7 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
 
         Intent intent = getIntent();
         name = intent.getStringExtra("이름");
+
         TextView park_name = (TextView) findViewById(R.id.park_name);
         park_name.setText(name);
 
@@ -61,29 +65,96 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
 
                 if (jsonObj.getString("이름").equals(name)) {
-                    ImageView p_image = (ImageView) findViewById(R.id.image);
-                    p_image.setImageResource(getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
+
+                    ImageView image = (ImageView) findViewById(R.id.image);
+                    if (jsonObj.getString("parkimg_name").equals(""))
+                        image.setImageResource(getResources().getIdentifier("parkimg_default", "drawable", getPackageName()));
+                    else
+                        image.setImageResource(getResources().getIdentifier(jsonObj.getString("parkimg_name"), "drawable", getPackageName()));
+
+                    ImageView bench = (ImageView) findViewById(R.id.ic_shortcut_bench);
+                    if (jsonObj.getInt("bench") == 1)
+                        bench.setImageResource(getResources().getIdentifier("ic_shortcut_bench", "drawable", getPackageName()));
+
+                    ImageView camera = (ImageView) findViewById(R.id.ic_shortcut_camera);
+                    if (jsonObj.getInt("camera") == 1)
+                        camera.setImageResource(getResources().getIdentifier("ic_shortcut_camera", "drawable", getPackageName()));
+
+                    ImageView parking = (ImageView) findViewById(R.id.ic_shortcut_parking);
+                    if (jsonObj.getInt("parking") == 1)
+                        parking.setImageResource(getResources().getIdentifier("ic_shortcut_parking", "drawable", getPackageName()));
+
+                    ImageView playground = (ImageView) findViewById(R.id.ic_shortcut_playground);
+                    if (jsonObj.getInt("playground") == 1)
+                        playground.setImageResource(getResources().getIdentifier("ic_shortcut_playground", "drawable", getPackageName()));
+
+                    ImageView pulling_up_training_silhouette = (ImageView) findViewById(R.id.ic_shortcut_pulling_up_training_silhouette);
+                    if (jsonObj.getInt("pulling_up_training_silhouette") == 1)
+                        pulling_up_training_silhouette.setImageResource(getResources().getIdentifier("ic_shortcut_pulling_up_training_silhouette", "drawable", getPackageName()));
+
+                    ImageView roundabout = (ImageView) findViewById(R.id.ic_shortcut_roundabout);
+                    if (jsonObj.getInt("roundabout") == 1)
+                        roundabout.setImageResource(getResources().getIdentifier("ic_shortcut_roundabout", "drawable", getPackageName()));
+
+                    ImageView toilet = (ImageView) findViewById(R.id.ic_shortcut_toilet);
+                    if (jsonObj.getInt("toilet") == 1)
+                        toilet.setImageResource(getResources().getIdentifier("ic_shortcut_toilet", "drawable", getPackageName()));
 
                     TextView p_name = (TextView) findViewById(R.id.name);
                     p_name.setText(jsonObj.getString("이름"));
 
-                    TextView p_part = (TextView) findViewById(R.id.part);
-                    p_part.setText(jsonObj.getString("구분"));
+                    TextView number = (TextView) findViewById(R.id.number);
+                    number.setText(jsonObj.getString("관리번호"));
 
-                    TextView p_place = (TextView) findViewById(R.id.address);
-                    p_place.setText(jsonObj.getString("세부주소"));
+                    TextView part = (TextView) findViewById(R.id.part);
+                    part.setText(jsonObj.getString("구분"));
 
-                    TextView p_size = (TextView) findViewById(R.id.size);
-                    p_size.setText(jsonObj.getString("면적")+" m2");
+                    TextView address = (TextView) findViewById(R.id.address);
+                    address.setText(jsonObj.getString("세부주소"));
 
-                    TextView p_phoneNumber = (TextView) findViewById(R.id.phone_number);
-                    p_phoneNumber.setText(jsonObj.getString("연락처"));
+                    TextView road_address = (TextView) findViewById(R.id.road_address);
+                    road_address.setText(jsonObj.getString("도로명주소"));
 
+                    TextView size = (TextView) findViewById(R.id.size);
+                    size.setText(jsonObj.getString("면적")+" m2");
+
+                    TextView benefit = (TextView) findViewById(R.id.benefit);
+                    benefit.setText(jsonObj.getString("편익시설"));
+
+                    TextView exercise = (TextView) findViewById(R.id.exercise);
+                    exercise.setText(jsonObj.getString("운동시설"));
+
+                    TextView play = (TextView) findViewById(R.id.play);
+                    play.setText(jsonObj.getString("유희시설"));
+
+                    TextView refinement = (TextView) findViewById(R.id.refinement);
+                    refinement.setText(jsonObj.getString("교양시설"));
+
+                    TextView etc = (TextView) findViewById(R.id.etc);
+                    etc.setText(jsonObj.getString("기타시설"));
+
+                    TextView appoint = (TextView) findViewById(R.id.appoint);
+                    appoint.setText(jsonObj.getString("지정고시일"));
+
+                    TextView management = (TextView) findViewById(R.id.management);
+                    management.setText(jsonObj.getString("관리기관명"));
+
+                    TextView standart_date = (TextView) findViewById(R.id.standart_date);
+                    standart_date.setText(jsonObj.getString("데이터기준일자"));
+
+                    TextView phoneNumber = (TextView) findViewById(R.id.phone_number);
+                    phoneNumber.setText(jsonObj.getString("연락처"));
                 }
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public void call(View view) {
+        TextView phoneNumber = (TextView) findViewById(R.id.phone_number);
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber.getText()));
+        startActivity(intent);
     }
 
     @Override
@@ -120,10 +191,9 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        // Add a marker in Sydney, Australia, and move the camera.
         LatLng park = new LatLng(Lat, Lng);
         map.addMarker(new MarkerOptions().position(park).title(name));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(park, 18));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(park, 15));
 
     }
 }

@@ -14,15 +14,68 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:textSize="30dp"
-            android:padding="15dp"
+            android:padding="10dp"
             android:text="공원 이름" />
 
         <ImageView
             android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
             android:layout_below="@id/park_name"
             android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/ic_shortcut_toilet"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/image"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginRight="15dp"
+            />
+
+        <ImageView
+            android:id="@+id/ic_shortcut_roundabout"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/image"
+            android:layout_toLeftOf="@id/ic_shortcut_toilet"/>
+
+        <ImageView
+            android:id="@+id/ic_shortcut_pulling_up_training_silhouette"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/image"
+            android:layout_toLeftOf="@id/ic_shortcut_roundabout"/>
+
+        <ImageView
+            android:id="@+id/ic_shortcut_playground"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/image"
+            android:layout_toLeftOf="@id/ic_shortcut_pulling_up_training_silhouette"/>
+
+        <ImageView
+            android:id="@+id/ic_shortcut_parking"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/image"
+            android:layout_toLeftOf="@id/ic_shortcut_playground"/>
+
+        <ImageView
+            android:id="@+id/ic_shortcut_camera"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/image"
+            android:layout_toLeftOf="@id/ic_shortcut_parking"/>
+
+        <ImageView
+            android:id="@+id/ic_shortcut_bench"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@id/image"
+            android:layout_toLeftOf="@id/ic_shortcut_camera"/>
 
         <fragment
             android:layout_width="400dp"
@@ -32,80 +85,173 @@
             tools:context=".ParkDetailViewActivity"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-            <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/map"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="16dp">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/map"
+            android:layout_margin="8dp"
+            android:padding="8dp">
 
-                <TableRow android:padding="16dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="공원 이름 : "/>
-                    <TextView
-                        android:id="@+id/name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="관리번호 : "/>
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-                <TableRow android:padding="16dp">
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="공원 이름 : "/>
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="분류 : " />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="분류 : " />
+                <TextView
+                    android:id="@+id/part"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
-                    <TextView
-                        android:id="@+id/part"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="세부주소 :" />
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="도로명주소 :" />
+                <TextView
+                    android:id="@+id/road_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면적 : " />
+                <TextView
+                    android:id="@+id/size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="편익시설 : " />
+                <TextView
+                    android:id="@+id/benefit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="운동시설 : " />
+                <TextView
+                    android:id="@+id/exercise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="유희시설 : " />
+                <TextView
+                    android:id="@+id/play"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="교양시설 : " />
+                <TextView
+                    android:id="@+id/refinement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기타시설 : " />
+                <TextView
+                    android:id="@+id/etc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="지정고시일 : " />
+                <TextView
+                    android:id="@+id/appoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="관리기관명 : " />
+                <TextView
+                    android:id="@+id/management"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
 
-                </TableRow>
+            <TableRow android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:text="연락처 : " />
+                <TextView
+                    android:id="@+id/phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:onClick="call"/>
+            </TableRow>
 
-                <TableRow android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="위치 :" />
-
-                    <TextView
-                        android:id="@+id/address"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </TableRow>
-
-                <TableRow android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="면적 : " />
-
-                    <TextView
-                        android:id="@+id/size"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </TableRow>
-
-                <TableRow android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:text="연락처 : " />
-
-                    <TextView
-                        android:id="@+id/phone_number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </TableRow>
-            </TableLayout>
+            <TableRow android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="데이터기준일자 : " />
+                <TextView
+                    android:id="@+id/standart_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+        </TableLayout>
     </RelativeLayout>
 </ScrollView>

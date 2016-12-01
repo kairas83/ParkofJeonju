@@ -29,10 +29,12 @@
 		mysql_data_seek($result, $i);       
         
 		$row = mysql_fetch_array($result);
-		echo "{\"이름\":\"$row[이름]\",
+		echo "{\"관리번호\":\"$row[관리번호]\",
+		\"이름\":\"$row[이름]\",
 		\"구분\":\"$row[구분]\",
 		\"구\":\"$row[구]\",
 		\"세부주소\":\"$row[세부주소]\",
+		\"도로명주소\":\"$row[도로명주소]\",
 		\"위도\":\"$row[위도]\",
 		\"경도\":\"$row[경도]\",
 		\"면적\":\"$row[면적]\",
@@ -44,7 +46,15 @@
 		\"playground\":\"$row[playground]\",
 		\"pulling_up_training_silhouette\":\"$row[pulling_up_training_silhouette]\",
 		\"roundabout\":\"$row[roundabout]\",
-		\"toilet\":\"$row[toilet]\"}";
+		\"toilet\":\"$row[toilet]\",
+		\"편익시설\":\"$row[편익시설]\",
+		\"운동시설\":\"$row[운동시설]\",
+		\"유희시설\":\"$row[유희시설]\",
+		\"교양시설\":\"$row[교양시설]\",
+		\"기타시설\":\"$row[기타시설]\",
+		\"지정고시일\":\"$row[지정고시일]\",
+		\"관리기관명\":\"$row[관리기관명]\",
+		\"데이터기준일자\":\"$row[데이터기준일자]\"}";
 
 		// 마지막 레코드 이전엔 ,를 붙인다. 그래야 데이터 구분이 되니깐.
 		if($i<$total_record-1){
