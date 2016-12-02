@@ -116,7 +116,7 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
                     road_address.setText(jsonObj.getString("도로명주소"));
 
                     TextView size = (TextView) findViewById(R.id.size);
-                    size.setText(jsonObj.getString("면적")+" m2");
+                    size.setText(jsonObj.getString("면적")+" ㎡");
 
                     TextView benefit = (TextView) findViewById(R.id.benefit);
                     benefit.setText(jsonObj.getString("편익시설"));
