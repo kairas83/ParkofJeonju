@@ -94,10 +94,6 @@
 
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="관리번호 : "/>
-                <TextView
                     android:id="@+id/number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -105,20 +101,11 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="공원 이름 : "/>
-                <TextView
                     android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="분류 : " />
-
                 <TextView
                     android:id="@+id/part"
                     android:layout_width="wrap_content"
@@ -127,19 +114,11 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="세부주소 :" />
-                <TextView
                     android:id="@+id/address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="도로명주소 :" />
                 <TextView
                     android:id="@+id/road_address"
                     android:layout_width="wrap_content"
@@ -147,19 +126,11 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="면적 : " />
-                <TextView
                     android:id="@+id/size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="편익시설 : " />
                 <TextView
                     android:id="@+id/benefit"
                     android:layout_width="wrap_content"
@@ -167,19 +138,11 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="운동시설 : " />
-                <TextView
                     android:id="@+id/exercise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="유희시설 : " />
                 <TextView
                     android:id="@+id/play"
                     android:layout_width="wrap_content"
@@ -187,19 +150,11 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="교양시설 : " />
-                <TextView
                     android:id="@+id/refinement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="기타시설 : " />
                 <TextView
                     android:id="@+id/etc"
                     android:layout_width="wrap_content"
@@ -207,19 +162,11 @@
             </TableRow>
             <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="지정고시일 : " />
-                <TextView
                     android:id="@+id/appoint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="관리기관명 : " />
                 <TextView
                     android:id="@+id/management"
                     android:layout_width="wrap_content"
@@ -227,12 +174,6 @@
             </TableRow>
 
             <TableRow android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="30dp"
-                    android:text="연락처 : " />
                 <TextView
                     android:id="@+id/phone_number"
                     android:layout_width="wrap_content"
@@ -243,10 +184,7 @@
             </TableRow>
 
             <TableRow android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="데이터기준일자 : " />
+
                 <TextView
                     android:id="@+id/standart_date"
                     android:layout_width="wrap_content"

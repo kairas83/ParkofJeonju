@@ -101,49 +101,51 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
                         toilet.setImageResource(getResources().getIdentifier("ic_shortcut_toilet", "drawable", getPackageName()));
 
                     TextView p_name = (TextView) findViewById(R.id.name);
-                    p_name.setText(jsonObj.getString("이름"));
+                    p_name.setText("이름 : "+jsonObj.getString("이름"));
 
                     TextView number = (TextView) findViewById(R.id.number);
-                    number.setText(jsonObj.getString("관리번호"));
+                    number.setText("관리번호 : "+jsonObj.getString("관리번호"));
 
                     TextView part = (TextView) findViewById(R.id.part);
-                    part.setText(jsonObj.getString("구분"));
+                    part.setText("구분 : "+jsonObj.getString("구분"));
 
                     TextView address = (TextView) findViewById(R.id.address);
-                    address.setText(jsonObj.getString("세부주소"));
+                    address.setText("세부주소 : "+jsonObj.getString("세부주소"));
 
                     TextView road_address = (TextView) findViewById(R.id.road_address);
-                    road_address.setText(jsonObj.getString("도로명주소"));
+                    road_address.setText("도로명주소 : "+jsonObj.getString("도로명주소"));
 
                     TextView size = (TextView) findViewById(R.id.size);
-                    size.setText(jsonObj.getString("면적")+" ㎡");
+                    size.setText("면적 : "+jsonObj.getString("면적")+"㎡");
 
                     TextView benefit = (TextView) findViewById(R.id.benefit);
-                    benefit.setText(jsonObj.getString("편익시설"));
+                    benefit.setText("편익시설 : "+jsonObj.getString("편익시설"));
 
                     TextView exercise = (TextView) findViewById(R.id.exercise);
-                    exercise.setText(jsonObj.getString("운동시설"));
+                    exercise.setText("운동시설 : "+jsonObj.getString("운동시설"));
 
                     TextView play = (TextView) findViewById(R.id.play);
-                    play.setText(jsonObj.getString("유희시설"));
+                    play.setText("유희시설 : "+jsonObj.getString("유희시설"));
 
                     TextView refinement = (TextView) findViewById(R.id.refinement);
-                    refinement.setText(jsonObj.getString("교양시설"));
+                    refinement.setText("교양시설 : "+jsonObj.getString("교양시설"));
 
                     TextView etc = (TextView) findViewById(R.id.etc);
-                    etc.setText(jsonObj.getString("기타시설"));
+                    etc.setText("기타시설 : "+jsonObj.getString("기타시설"));
 
                     TextView appoint = (TextView) findViewById(R.id.appoint);
-                    appoint.setText(jsonObj.getString("지정고시일"));
+                    appoint.setText("지정고시일 : "+jsonObj.getString("지정고시일"));
 
                     TextView management = (TextView) findViewById(R.id.management);
-                    management.setText(jsonObj.getString("관리기관명"));
-
-                    TextView standart_date = (TextView) findViewById(R.id.standart_date);
-                    standart_date.setText(jsonObj.getString("데이터기준일자"));
+                    management.setText("관리기관명 : "+jsonObj.getString("관리기관명"));
 
                     TextView phoneNumber = (TextView) findViewById(R.id.phone_number);
-                    phoneNumber.setText(jsonObj.getString("연락처"));
+                    phoneNumber.setText("연락처 : "+jsonObj.getString("연락처"));
+
+                    TextView standart_date = (TextView) findViewById(R.id.standart_date);
+                    standart_date.setText("데이터기준일자 : "+jsonObj.getString("데이터기준일자"));
+
+
                 }
             }
         } catch (JSONException e) {
@@ -153,7 +155,7 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
 
     public void call(View view) {
         TextView phoneNumber = (TextView) findViewById(R.id.phone_number);
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber.getText()));
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumber.getText().toString().substring(4, phoneNumber.getText().toString().length())));
         startActivity(intent);
     }
 
