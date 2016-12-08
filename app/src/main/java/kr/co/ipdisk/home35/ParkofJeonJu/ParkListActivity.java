@@ -64,4 +64,3 @@ public class ParkListActivity extends AppCompatActivity {
         myList.setAdapter(myListAdapter);
     }
 }
-
