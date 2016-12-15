@@ -12,6 +12,9 @@ import java.net.URL;
  * Created by kairas on 2016-11-23.
  */
 
+    /*
+    Thread 를 이용해서 데이터베이스에서 자료를 가져온다.
+     */
 public class phpDown extends Thread {
 
     private String result;

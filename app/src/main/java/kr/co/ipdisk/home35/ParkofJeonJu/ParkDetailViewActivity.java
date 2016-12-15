@@ -24,6 +24,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Created by LG on 2016-11-23.
  */
 
+    /*
+       공원 세부내용을 보여주기 위한 엑티비티
+     */
+
 public class ParkDetailViewActivity extends FragmentActivity implements OnMapReadyCallback {
     String name = null;
 
@@ -39,10 +43,12 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
         Intent intent = getIntent();
         name = intent.getStringExtra("이름");
 
+        // 이전 Activity에서 넘겨받은 "이름" 을 이용해서 엑티비티를 구현한다.
+
         TextView park_name = (TextView) findViewById(R.id.park_name);
         park_name.setText(name);
 
-        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
+        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php"; // 데이터 베이스가 있을 PHP 주소
         phpDown task = new phpDown(test);
 
         task.start();
@@ -56,6 +62,11 @@ public class ParkDetailViewActivity extends FragmentActivity implements OnMapRea
         } finally {
             result = task.getResult();
         }
+
+        /*
+       예외 처리를 이용하고, 해당 공원의 보유시설 및 사진의 유무에 따라서 데이터베이스에서
+       데이터를 가지고 올 것인지 안 가져 올 것인지 판단한다.
+         */
 
         try {
             JSONObject root = new JSONObject(result);

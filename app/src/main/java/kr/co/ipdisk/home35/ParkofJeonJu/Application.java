@@ -6,6 +6,10 @@ package kr.co.ipdisk.home35.ParkofJeonJu;
 
 public final class Application extends android.app.Application {
     @Override
+
+    /*
+        폰트를 위한 설정
+     */
     public void onCreate() {
         super.onCreate();
         FontsOverride.setDefaultFont(this, "DEFAULT", "THEAlien.ttf");

@@ -10,6 +10,10 @@ import android.graphics.Typeface;
 
 final class FontsOverride {
 
+        /*
+            Default 폰트 설정을 위한 java 파일
+     */
+
     public static void setDefaultFont(Context context,
                                       String staticTypefaceFieldName, String fontAssetName) {
         final Typeface regular = Typeface.createFromAsset(context.getAssets(),

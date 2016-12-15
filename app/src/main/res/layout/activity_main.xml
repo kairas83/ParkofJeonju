@@ -18,6 +18,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="21dp">
+        <!--  테이블 레이아웃을 이용해서 보기쉽고 간결하게 메인화면을 구성하는 레이아웃  -->
+        <!--  4개의 이미지 버튼을 이용해서 공원 전체와 분류별 공원, 오늘의 추천공원 등등을 구성하였다. -->
 
         <TableRow>
             <ImageButton

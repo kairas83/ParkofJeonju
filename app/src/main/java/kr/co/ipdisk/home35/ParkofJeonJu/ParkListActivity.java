@@ -10,14 +10,19 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+    /*
+       공원 리스트를 보여주는 엑티비티
+
+     */
+
 public class ParkListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_park_list_view);
+        setContentView(kr.co.ipdisk.home35.ParkofJeonJu.R.layout.activity_park_list_view); // 공원 리스트 레이아웃을 사용한다.
 
-        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
+        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php"; // 데이터베이스 PHP 주소
         phpDown task = new phpDown(test);
 
         task.start();
@@ -32,7 +37,8 @@ public class ParkListActivity extends AppCompatActivity {
             result = task.getResult();
         }
 
-        ArrayList<MyItem> arItem = new ArrayList<MyItem>();
+
+        ArrayList<MyItem> arItem = new ArrayList<MyItem>(); // MyItem 에 있는 어레이들을 이용해서 객체를 생성한다.
         MyItem mi;
 
         try {
@@ -58,7 +64,7 @@ public class ParkListActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.list_content, arItem);
+        MyListAdapter myListAdapter = new MyListAdapter(this, R.layout.list_content, arItem);  // 데이터를 가져 온 이후에 list_content에 뿌려주는 역할
 
         ListView myList = (ListView) findViewById(R.id.list);
         myList.setAdapter(myListAdapter);

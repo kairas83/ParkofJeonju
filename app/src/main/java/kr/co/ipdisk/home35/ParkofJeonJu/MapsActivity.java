@@ -17,7 +17,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // GPSTracker class
     //private GpsInfo gps;
-
+        /*
+       구글맵을 구동하기 위한 Activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

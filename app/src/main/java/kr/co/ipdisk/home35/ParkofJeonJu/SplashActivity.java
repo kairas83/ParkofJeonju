@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+/*
+    로딩화면을 구현한 모습.
+    0.7초후에 메인화면으로 넘어간다.
+ */
 public class SplashActivity extends Activity {
 
     @Override

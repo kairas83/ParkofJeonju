@@ -15,6 +15,10 @@ import java.util.ArrayList;
  * Created by kaira on 2016-11-30.
  */
 
+
+    /*
+       분류별 공원 리스트를 보여주는 엑티비티
+     */
 public class PartListView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +26,14 @@ public class PartListView extends AppCompatActivity {
         setContentView(R.layout.activity_part_list_view);
 
         Intent intent = getIntent();
-        String part = intent.getStringExtra("part");
+        String part = intent.getStringExtra("part");  // 앞의 분류별 공원에서 덕진구 혹은 완산구를 눌렀을대 PART 로 넘겨받은
 
-        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";
+        String test = "http://home35.ipdisk.co.kr/msd/SelectAllItem.php";  // 데이터베이스 PHP 주소
         phpDown task = new phpDown(test);
 
         task.start();
         String result;
+
 
         try {
             task.join();
@@ -39,9 +44,14 @@ public class PartListView extends AppCompatActivity {
             result = task.getResult();
         }
 
-        ArrayList<MyItem> arItem = new ArrayList<MyItem>();
+        ArrayList<MyItem> arItem = new ArrayList<MyItem>();  // MyItem 에 있는 어레이들을 이용해서 객체를 생성한다.
         MyItem mi;
 
+
+
+        /*
+            이름을 이용해서 데이터베이스에서 데이터를 읽어온다.
+         */
         try {
             JSONObject root = new JSONObject(result);
             JSONArray jsonArray = root.getJSONArray("results");

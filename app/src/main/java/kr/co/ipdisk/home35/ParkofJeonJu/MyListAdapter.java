@@ -17,6 +17,12 @@ import java.util.ArrayList;
 /**
  * Created by kaira on 2016-11-09.
  */
+
+
+    /*
+       아이템 리스트를 어댑터를 사용해서
+       엑티비티에 뿌려주는 기능을 한다.
+     */
 public class MyListAdapter extends BaseAdapter {
     private Context maincon;
     private LayoutInflater Inflater;
